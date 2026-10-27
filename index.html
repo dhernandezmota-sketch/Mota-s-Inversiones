@@ -8,11 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
 <title>Mota's Inversiones</title>
 </head>
 <body>
 
-<header class="header inversiones"> <!--Encabezado de mi página, IMPORTANTE Considerar la class para darle estilo en el css-->
+<header class="headerInversiones"> <!--Encabezado de mi página, IMPORTANTE Considerar la class para darle estilo en el css-->
       <div class="logo">
         <img src="img/MOTAS.jpg" alt="Logo Inversiones " class="logo">
       </div>
@@ -20,7 +21,7 @@
       <nav class="nav">
         <ul>
           <li><a href="#inicio" class="nav-button">Inicio</a></li>
-          <li><a href="#acerca de nosotros" class="nav-button">Acerca de nosotros</a></li>
+          <li><a href="#acerca-de-nosotros" class="nav-button">Acerca de nosotros</a></li>
           <li><a href="#inversiones" class="nav-button">Inversiones</a></li>
           <li><a href="#contacto" class="nav-button">Contacto</a></li>
         </ul>
@@ -49,9 +50,54 @@
       </div>
       </div>
       
+    </section>  <!--AQUÍ TERMINA TODO LO DEL HERO, donde esta el video y los botones-->
+
+<!--INICIO DE LA SECCIÓN SOBRE NOSOTROS, Nuestra misión, quienes somos, etc-->
+
+<section id="acerca-de-nosotros" class="acerca-de-nosotros">
+      <h2>Acerca de nosotros</h2>
+      <div class="content">
+        <p>Somos una organización dedicada a ayudarte a menjar tu dinero, enseñandote acerca de inversiones y sus posibles riesgos.</p>
+      </div>
     </section>
 
    </main>
+<footer id="contacto-MotasInversiones">
+ <div class="footer-grid">
+      <div class="contacto">
+        <h3>Contacto</h3>
+        <address>
+          <p>
+            <i class="fa fa-map-marker-alt"></i>
+            <a href="https://maps.app.goo.gl/SvgmrLLEgDVWLFSv8" target="_blank" rel="noreferrer noopener">
+            <span style="color: #000000; font-weight: bold">Ubicación: </span> C. Benito Juárez 5
+            </a>
+          </p>
+          <p>
+            <i class="fa fa-phone"></i>
+            <span style="color: #000000; font-weight: bold">Teléfono: </span> <a href="tel:+5534980811"> 55 3498 0811</a>
+          </p>
+        </address>
+      </div>
+      
+      <div class="redes-sociales">
+        <h3>Síguenos en redes sociales</h3>
+        <div class="redes-iconos">
+          <a href="https://www.facebook.com/?locale=es_LA" aria-label="Síguenos en Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://www.instagram.com/m_diego_h/" aria-label="Síguenos en Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@diegomorningstar_" aria-label="Síguenos en TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <button onclick="scrollToTop()" class="scroll-to-top-btn" aria-label="Volver al inicio de la página">
+        <i class="fa fa-arrow-up"></i>
+      </button>
+
+    <p class="copyright">&copy; 2026 Mota's Inversiones. Todos los derechos reservados.</p>
+</div>
+</footer>
+
 
 </body>
 </html>
