@@ -386,3 +386,77 @@
   font-size: 0.8rem;
   margin: 0;
   }
+
+  /* Estilos para todas las secciones principales */
+  main section {
+  padding: 50px 20px;
+  margin: 0 auto;
+  text-align: center;
+  }
+
+  /* Sección Quiénes Somos */
+  .quienes-somos {
+  background-color: #b9ddff;
+  }
+  
+  .quienes-somos h2 {
+  margin-bottom: 20px;
+  }
+  
+  .quienes-somos .content {
+  max-width: 800px;
+  margin: 0 auto;
+  }
+
+  /* Contenedor principal de las tarjetas en cuadrícula */
+#curso-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Estilos de la tarjeta (compatible con .dw-card y .principiante-card) */
+.dw-card, .principiante-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgb(215, 52, 52);
+  overflow: hidden;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dw-card:hover, .principiante-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(253, 50, 50, 0.752);
+}
+
+/* Normalización de las imágenes */
+.dw-card img, .principiante-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  display: block;
+}
+
+/* Título de la tarjeta */
+.dw-card figcaption, .principiante-card figcaption {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #040303;
+  padding: 15px 15px 5px 15px;
+  text-align: center;
+}
+
+/* Descripción de la tarjeta */
+.dw-card .card-description, .principiante-card .card-description {
+  padding: 0 15px 15px 15px;
+  font-size: 0.9rem;
+  color: #000000;
+  text-align: center;
+  flex-grow: 1;
+}

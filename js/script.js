@@ -26,10 +26,67 @@ const filterButtons = document.querySelectorAll(".filter-btn");
 
 // Función para renderizar las tarjetas 
 function renderDw(genero) {
-    let dwmotaToRender = [];
-    if (genero === "all") {
-        dwmotaToRender = dwmota;
-    } else {
-        dwmotaToRender = dwmota.filter(Dwmota => Dwmota.genero === genero);
+    const dwmotaToRender = genero === "all"
+        ? dwmota
+        : dwmota.filter(dw => dw.genero === genero);
+    const dwmotaContainers = document.querySelectorAll("#curso-container");
+    const container = dwmotaContainers[0] || dwmotaContainer;
+
+    if (!container) {
+        return;
     }
+
+    // Limpia el contenedor antes de renderizar
+    dwmotaContainers.forEach(element => {
+        element.innerHTML = '';
+    });
+
+    if (dwmotaToRender.length === 0) {
+        container.innerHTML = '<p class="text-center w-100">No hay disponibles para esta categoría.</p>';
+        return;
+    }
+
+    // Crea y agrega las tarjetas
+    container.innerHTML = dwmotaToRender.map(dw => `
+            <figure class="dw-card" data-gender="${dw.genero}">
+                <img src="${dw.image}" alt="Con nosotros podras aprender a manejatr tu dinero o podemos manejarlo por ti, nombre: ${dw.name}">
+                <figcaption>
+                ${dw.name}
+            </figcaption>
+                <div class="card-description">
+                    <p>${dw.description}</p>
+                </div>
+            </figure>
+        `).join('');
+
+}
+
+// Agrega event listeners a los botones de filtro
+filterButtons.forEach(button => {
+    button.addEventListener("click", () => {
+        const genero = button.dataset.category;
+
+
+        // Remueve la clase 'active' de todos los botones
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+        // Agrega la clase 'active' al botón clickeado
+        button.classList.add("active");
+        
+        // Renderiza las tarjetas con el filtro seleccionado
+        renderDw(genero);
+    });
+});
+
+// Renderizar todos para cargar la página
+document.addEventListener("DOMContentLoaded", () => {
+    renderDw('all');
+});
+
+
+// Función para el botón de volver al inicio
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 }
